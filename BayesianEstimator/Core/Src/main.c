@@ -71,7 +71,6 @@ float input_test_array[10] = { -0.001, -3.000, 1.551, 0.570, -1.601, 0.980,
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-static void MX_GPIO_Init(void);
 static void MX_RTC_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -108,9 +107,50 @@ int main(void) {
 	/* USER CODE END SysInit */
 
 	/* Initialize all configured peripherals */
-	MX_GPIO_Init();
 	MX_RTC_Init();
 	/* USER CODE BEGIN 2 */
+	/*
+	 * @TODO :
+	 * 			1: wake up periodically at an interval of 10ms.
+	 * 			2: execute the Naive-Bayes Classifier
+	 * 			3: Go to low Power mode
+	 * @Design :
+	 * 			The controller is configured in Stop mode with SleepOnExit feature
+	 * 			So the will go into Stop mode and as soon as it receives a INT it will wake up and
+	 * 			execute the sub-routine. Once the sub-routine is completed it will go again into Stop mode.
+	 *
+	 */
+	/*
+	 Configure the Wake up timer
+	 RTC Wake-up Interrupt Generation:
+	 Wake-up Time Base = (RTC_WAKEUPCLOCK_RTCCLK_DIV /(LSI))
+	 ==> WakeUpCounter = Wake-up Time / Wake-up Time Base
+
+	 To configure the wake up timer to 20s the WakeUpCounter is set to 0xA017:
+	 RTC_WAKEUPCLOCK_RTCCLK_DIV = RTCCLK_Div16 = 16
+	 Wake-up Time Base = 16 /(32KHz) = 0.0005 seconds
+	 ==> WakeUpCounter = ~10ms/0.0005s = 20 = 0x14
+	 */
+
+	if (HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 0x20, RTC_WAKEUPCLOCK_RTCCLK_DIV16)
+			!= HAL_OK) {
+		Error_Handler();
+	}
+
+	/*** Suspend the systick before going into stop mode ****/
+	HAL_SuspendTick();
+
+	/*** enable sleep on exit for interrupt only operations ****/
+	HAL_PWR_EnableSleepOnExit();
+
+	/*** ENTER THE STOP MODE ****/
+	HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
+
+	/*** wake up from stop mode ****/
+
+	// disable the RTC wakeup
+	HAL_RTCEx_DeactivateWakeUpTimer(&hrtc);
+
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
@@ -118,44 +158,6 @@ int main(void) {
 
 	while (1) {
 		/* USER CODE END WHILE */
-
-		/*
-		 * @TODO :
-		 * 			1: wake up periodically at an interval of 10ms.
-		 * 			2: execute the Naive-Bayes Classifier
-		 * 			3: Go to low Power mode
-		 * @Design :
-		 * 			The controller is configured in Stop mode with SleepOnExit feature
-		 * 			So the will go into Stop mode and as soon as it receives a INT it will wake up and
-		 * 			execute the sub-routine. Once the sub-routine is completed it will go again into Stop mode.
-		 *
-		 */
-
-		/*
-		 Configure the Wake up timer
-		 RTC Wake-up Interrupt Generation:
-		 Wake-up Time Base = (RTC_WAKEUPCLOCK_RTCCLK_DIV /(LSI))
-		 ==> WakeUpCounter = Wake-up Time / Wake-up Time Base
-
-		 To configure the wake up timer to 20s the WakeUpCounter is set to 0xA017:
-		 RTC_WAKEUPCLOCK_RTCCLK_DIV = RTCCLK_Div16 = 16
-		 Wake-up Time Base = 16 /(32KHz) = 0.0005 seconds
-		 ==> WakeUpCounter = ~10ms/0.0005s = 20 = 0x14
-		 */
-
-		if (HAL_RTCEx_SetWakeUpTimer(&hrtc, 20, RTC_WAKEUPCLOCK_RTCCLK_DIV16)
-				!= HAL_OK) {
-			Error_Handler();
-		}
-
-		/****** Suspend the Ticks before entering the STOP mode or else this can wake the device up **********/
-		HAL_SuspendTick();
-
-		HAL_PWR_EnableSleepOnExit(); // enable Sleep on Exit : it will put the controller into sleep after completing the sub-routine
-
-		/* Enter Stop Mode */
-		HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
-		/* Enter Stop Mode */
 
 		/* USER CODE BEGIN 3 */
 	}
@@ -235,30 +237,13 @@ static void MX_RTC_Init(void) {
 	}
 	/** Enable the WakeUp
 	 */
-	if (HAL_RTCEx_SetWakeUpTimer(&hrtc, 20, RTC_WAKEUPCLOCK_RTCCLK_DIV16)
-			!= HAL_OK) {
-		Error_Handler();
-	}
-	/** Enable Calibrartion
-	 */
-	if (HAL_RTCEx_SetCalibrationOutPut(&hrtc, RTC_CALIBOUTPUT_1HZ) != HAL_OK) {
-		Error_Handler();
-	}
+//  if (HAL_RTCEx_SetWakeUpTimer_IT(&hrtc, 20, RTC_WAKEUPCLOCK_RTCCLK_DIV16) != HAL_OK)
+//  {
+//    Error_Handler();
+//  }
 	/* USER CODE BEGIN RTC_Init 2 */
 
 	/* USER CODE END RTC_Init 2 */
-
-}
-
-/**
- * @brief GPIO Initialization Function
- * @param None
- * @retval None
- */
-static void MX_GPIO_Init(void) {
-
-	/* GPIO Ports Clock Enable */
-	__HAL_RCC_GPIOC_CLK_ENABLE();
 
 }
 
