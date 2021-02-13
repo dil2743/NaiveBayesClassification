@@ -86,6 +86,7 @@ HAL_PWR_EnableSleepOnExit();
 
 ![Power Consumption](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/Design/ConsumptionPofile.PNG)
 
+> ### The clock is configured at 32 Mhz as the subroutine execution takes about 26000 DWT cycle which is approx 0.1ms time on core and it can be seen from above analysis that the Run mode is only consuming 7.5 mAmps of current while stop mode is consuming approx 750nAmps leading to average consumption of approx. 73 micro-AMps.
 
 
 > ### Flow Design
