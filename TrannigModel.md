@@ -30,7 +30,7 @@ The following code generates three clusters of points:
        x2 = [-1.5, 1] + ballRadius * np.random.randn(NBVECS,VECDIM)
        x3 = [0, -3] + ballRadius * np.random.randn(NBVECS,VECDIM)
 ```
->   ![Cluster Image](/ModelTraining/tranningPlot.png)
+>   ![Cluster Image](/ModelTraining/trainingPlot.png)
 
 All the points and their classes are concatenated for the training.
 
@@ -84,7 +84,7 @@ The parameters that are required can be dumped with following Python code:
         print("Epsilon = ",gnb.epsilon_)
 ```
 
-![Tranning Parameters Output ](/ModelTraining/tranningOutput.PNG)
+![Tranning Parameters Output ](/ModelTraining/trainingOutput.PNG)
 
 
 
