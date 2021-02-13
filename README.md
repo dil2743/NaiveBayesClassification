@@ -12,7 +12,7 @@ The firmware should be written to exhibit minimal power consumption without perf
 
 
 
-## [CubeIDE Project](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/Images/Design/TargetSelection.PNG)
+## [CubeIDE Project](https://github.com/dil2743/NaiveBayesClassification/tree/CubeIde/BayesianEstimator)
 
 
 
@@ -28,7 +28,7 @@ The firmware should be written to exhibit minimal power consumption without perf
 
 Stm32L071CBTx is selected from available options after analysing various available options on the basis of available RAM, Flash, power consumption and DMIPS.
 
-![Stm32L071CBTx](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/Design/TargetSelection.PNG)
+![Stm32L071CBTx](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/Images/Design/TargetSelection.PNG)
 
 
 
