@@ -9,7 +9,7 @@ The objective is to Bayesian classifier with scikit-learn and how dump the param
 
 ## How to train the model
 
-The file [BayesianClassiferTrain.py](/ModelTraining/BayesianModelTrainer.py) contains all the code.
+The file [BayesianClassiferTrain.py](https://github.com/dil2743/NaiveBayesClassification/blob/new/ModelTranning/BayesianClassiferTrain.py) contains all the code.
 
 The training of the Bayesian classifier is relying on the scikit-learn library. So, we must import GaussianNB from the sklearn.naive_bayes module.
 Training requires some data. The random, numpy, and math Python modules are imported for the data generation part.
@@ -30,7 +30,7 @@ The following code generates three clusters of points:
        x2 = [-1.5, 1] + ballRadius * np.random.randn(NBVECS,VECDIM)
        x3 = [0, -3] + ballRadius * np.random.randn(NBVECS,VECDIM)
 ```
->   ![Cluster Image](/ModelTraining/trainingPlot.png)
+>   ![Cluster Image](https://github.com/dil2743/NaiveBayesClassification/blob/new/ModelTranning/trainingPlot.png)
 
 All the points and their classes are concatenated for the training.
 
@@ -84,7 +84,7 @@ The parameters that are required can be dumped with following Python code:
         print("Epsilon = ",gnb.epsilon_)
 ```
 
-![Tranning Parameters Output ](/ModelTraining/ParametersOutput.PNG)
+![Tranning Parameters Output ](https://github.com/dil2743/NaiveBayesClassification/blob/new/ModelTranning/ParametersOutput.PNG)
 
 
 
