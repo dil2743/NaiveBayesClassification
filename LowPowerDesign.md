@@ -3,7 +3,7 @@ This type of application contains generally two different phases:
 *  **Process phase** , in which some sensor or radio information needs to be processed at either regular time
 intervals (RTC) or on external events (GPIO, interrupts..).
 * **Inactive phase**, in which the system is sleeping and waiting for either RTC or GPIO wakeup.
-![Process](LowPowerDesign/1.PNG)
+![Process](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/Images/LowPowerDesign/1.PNG)
 
 # Key parameters to consider
 Both phases have different performance criteria (in addition to power consumption):
