@@ -12,7 +12,7 @@ The firmware should be written to exhibit minimal power consumption without perf
 
 
 
-## [CubeIDE Project](https://github.com/dil2743/NaiveBayesClassification/tree/CubeIde/BayesianEstimator)
+## [CubeIDE Project](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/Images/Design/TargetSelection.PNG)
 
 
 
@@ -84,7 +84,7 @@ HAL_PWR_EnableSleepOnExit();
 
 * **Stop mode** is used as low power mode and the analysis about the same can be found below
 
-![Power Consumption](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/Design/ConsumptionPofile.PNG)
+![Power Consumption](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/Images/Design/ConsumptionPofile.PNG)
 
 > ### The clock is configured at 32 Mhz as the subroutine execution takes about 26000 DWT cycle which is approx 0.1ms time on core and it can be seen from above analysis that the Run mode is only consuming 7.5 mAmps of current while stop mode is consuming approx 750nAmps leading to average consumption of approx. 73 micro-AMps.
 
