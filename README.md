@@ -28,19 +28,19 @@ Stm32L071CBTx is selected from available options after analysing various availab
 
 
 
-# [Exploring CMSIS-DSP Library](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/CMSIS-DSP.md)
+#  [***Exploring CMSIS-DSP Library***](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/CMSIS-DSP.md)
 
 
 
-# [Exploring Low Power Mode](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/LowPowerDesign.md)
+#  [***Exploring Low Power Mode***](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/LowPowerDesign.md)
 
 
 
-# [Understanding NaiveBayes classifier](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/Naive-BayesClassifier.md)
+#  [***Understanding NaiveBayes classifier***](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/Naive-BayesClassifier.md)
 
 
 
-# [Training Model and Collecting Parameters](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/TrannigModel.md)
+#  [***Training Model and Collecting Parameters***](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/TrannigModel.md)
 
 > The Python script can be found [here](https://github.com/dil2743/NaiveBayesClassification/blob/CubeIde/ModelTranning/BayesianClassiferTrain.py) which can be used to train NaiveBayes classifier and to generate required parameters. 
 
