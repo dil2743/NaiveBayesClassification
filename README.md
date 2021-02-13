@@ -18,9 +18,9 @@ The firmware should be written to exhibit minimal power consumption without perf
 
 ## Microcontroller selection 
 
-> Stm has a good line of low power controllers, according to  requirement the MCU should be on Cortex M0+ and must consume list power with desired performance.
+> STMicroelectronics has a good line of low power controllers, as per above requirement the MCU should be on **Cortex M0+** and must consume list power with desired performance.
 
-> **Stm32 CubeIde** provides a nice interface for selecting the MCU, as can be seen from below image that with the help of available filters such as **Core**, **Series**, **Line** and **Package** it become quite easy to narrow down the list.
+> **Stm32 CubeIDE** provides a nice interface for selecting the MCU, as can be seen from below image that with the help of available filters such as **Core**, **Series**, **Line** and **Package** it become quite easy to narrow down the list.
 
 Stm32L071CBTx is selected from available options after analysing various available options on the basis of available RAM, Flash, power consumption and DMIPS.
 
