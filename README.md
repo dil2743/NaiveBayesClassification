@@ -12,17 +12,13 @@ The firmware should be written to exhibit minimal power consumption without perf
 
 
 
-## [CubeIDE Project](https://github.com/dil2743/NaiveBayesClassification/tree/CubeIde/BayesianEstimator)
-
+## [Project Implimentation](https://github.com/dil2743/NaiveBayesClassification/tree/CubeIde/BayesianEstimator)
+>	* The project is developed on **CubeIDE** Version: 1.5.1 can be found [here](https://github.com/dil2743/NaiveBayesClassification/tree/CubeIde/BayesianEstimator)
 
 
 ## Microcontroller selection 
 
-
-
 > Stm has a good line of low power controllers, according to  requirement the MCU should be on Cortex M0+ and must consume list power with desired performance.
-
-
 
 > **Stm32 CubeIde** provides a nice interface for selecting the MCU, as can be seen from below image that with the help of available filters such as **Core**, **Series**, **Line** and **Package** it become quite easy to narrow down the list.
 
