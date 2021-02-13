@@ -56,8 +56,8 @@ all: main-build
 main-build: Bayse1.elf secondary-outputs
 
 # Tool invocations
-Bayse1.elf: $(OBJS) $(USER_OBJS) C:\Users\dilshadk\STM32CubeIDE\workspace_1.5.0\Bayse1\STM32G0B1KCTX_FLASH.ld
-	arm-none-eabi-gcc -o "Bayse1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\dilshadk\STM32CubeIDE\workspace_1.5.0\Bayse1\STM32G0B1KCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Bayse1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Bayse1.elf: $(OBJS) $(USER_OBJS) C:\Users\dilshadk\git\NaiveBayesClassification\Bayse1\STM32G0B1KCTX_FLASH.ld
+	arm-none-eabi-gcc -o "Bayse1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"C:\Users\dilshadk\git\NaiveBayesClassification\Bayse1\STM32G0B1KCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Bayse1.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
