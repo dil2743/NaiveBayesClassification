@@ -84,7 +84,7 @@ The parameters that are required can be dumped with following Python code:
         print("Epsilon = ",gnb.epsilon_)
 ```
 
-![Tranning Parameters Output ](/ModelTraining/trainingOutput.PNG)
+![Tranning Parameters Output ](/ModelTraining/ParametersOutput.PNG)
 
 
 
